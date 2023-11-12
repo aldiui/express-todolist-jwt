@@ -20,6 +20,7 @@ const getAllTodo = async (req, res) => {
 
 const getTodoById = async (req, res) => {
     try {
+        const { id } = req.payload;
         const dataTodo = await Todo.findOne({ where: { id: req.params.id, user_id: id } });
 
         res.status(200).json({
