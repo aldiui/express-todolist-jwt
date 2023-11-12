@@ -10,7 +10,7 @@ Api ini menggunakan teknologi express js dan sequelize sebagai ORM serta authent
 - [Installation](#installation)
 - [Usage](#usage)
 
-## Intrduction
+## Introduction
 
 API ini memungkinkan pengguna untuk mengelola daftar tugas mereka. Pengguna perlu mengautentikasi menggunakan JWT sebelum mengakses titik akhir terkait tugas.
 
