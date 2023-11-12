@@ -42,7 +42,6 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
     try {
-        console.log(process.env.JWT_SECRET);
         const checkEmail = await User.findOne({ where: { email: req.body.email } });
         if (!checkEmail) {
             return res.status(400).json({
