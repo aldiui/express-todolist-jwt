@@ -29,7 +29,7 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 
 ### Login
 
-- **Endpoint:** `/logim`
+- **Endpoint:** `/login`
 - **Method:** `POST`
 - **Deskripisi:** Login user denga memasukan data name, dan password.
 - **Authentication:** Tidak ada
