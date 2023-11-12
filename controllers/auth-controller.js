@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const key = "jsfgfjguwrg8783wgbjs849h2fu3cnsvh8wyr8fhwfvi2g225";
 
 const registerUser = async (req, res) => {
     try {
@@ -58,7 +59,7 @@ const loginUser = async (req, res) => {
             });
         }
 
-        const accessToken = jwt.sign({ id: checkEmail.id, email: checkEmail.email }, process.env.JWT_SECRET, { expiresIn: "7d" });
+        const accessToken = jwt.sign({ id: checkEmail.id, email: checkEmail.email }, key, { expiresIn: "7d" });
         return res.status(200).json({
             status: 200,
             message: "Login anda berhasil",
