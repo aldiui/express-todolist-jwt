@@ -2,7 +2,7 @@ const express = require("express");
 const { registerUser, loginUser, logoutUser } = require("../controllers/auth-controller");
 const verifyToken = require("../middleware/auth");
 const { getUserByToken } = require("../controllers/user-controller");
-const { getAllTodo, createTodo, getTodoById, updateTodo, deleteTodo } = require("../controllers/todo-controller");
+const { getAllTodo, createTodo, getTodoById, updateTodo, deleteTodo, deleteAllTodo } = require("../controllers/todo-controller");
 const { todoValidationRules, todoValidate } = require("../validators/todo-validator");
 const { registerValidationRules, registerValidate, loginValidationRules, loginValidate } = require("../validators/auth-validator");
 
@@ -19,5 +19,6 @@ route.get("/todo", verifyToken, getAllTodo);
 route.get("/todo/:id", verifyToken, getTodoById);
 route.put("/todo/:id", verifyToken, todoValidationRules(), todoValidate, updateTodo);
 route.delete("/todo/:id", verifyToken, deleteTodo);
+route.delete("/todo", verifyToken, deleteAllTodo);
 
 module.exports = route;

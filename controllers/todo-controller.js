@@ -95,4 +95,20 @@ const deleteTodo = async (req, res) => {
     }
 };
 
-module.exports = { getAllTodo, getTodoById, createTodo, updateTodo, deleteTodo };
+const deleteAllTodo = async (req, res) => {
+    try {
+        const { id } = req.payload;
+        await Todo.destroy({ where: { user_id: id } });
+        res.status(200).json({
+            status: 200,
+            message: "Todo anda berhasil dihapus",
+        });
+    } catch (error) {
+        return res.status(500).json({
+            status: 500,
+            message: "Kesalahan server internal pada todo",
+        });
+    }
+};
+
+module.exports = { getAllTodo, getTodoById, createTodo, updateTodo, deleteTodo, deleteAllTodo };
