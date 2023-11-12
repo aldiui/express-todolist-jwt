@@ -1,92 +1,87 @@
 # Todo List API
 
-This is a simple Todo List API with JWT authentication.
+Api ini menggunakan teknologi express js dan sequelize sebagai ORM serta authentifikasi dengan menggunakan JWT
 
-## Table of Contents
+## Content
 
--   [Introduction](#introduction)
--   [Authentication](#authentication)
--   [Endpoints](#endpoints)
-    -   [Get All Todos](#get-all-todos)
-    -   [Get Todo by ID](#get-todo-by-id)
-    -   [Create Todo](#create-todo)
-    -   [Update Todo](#update-todo)
-    -   [Delete Todo](#delete-todo)
-    -   [User Logout](#user-logout)
--   [Installation](#installation)
--   [Usage](#usage)
--   [Contributing](#contributing)
--   [License](#license)
 
-## Introduction
+- [Intrdduction](#introduction)
+- [Authentication](#authentication)
+- [Endpoints](#endpoints)
+  - [ ]  [User Register](#get-all-todos)
+  - [ ]  [User Login](#get-all-todos)
+  - [ ]  [Get User](#get-all-todos)
+  - [ ]  [Get All Todo](3get-all-todo)
+  - [ ]  [Get Todo by ID](#get-todo-by-id)
+  - [ ]  [Create Todo](#create-todo)
+  - [ ]  [Update Todo](#update-todo)
+  - [ ]  [Delete Todo](#delete-todo)
+  - [ ]  [User Logout](#user-logout)
+- [Installation](#installation)
+- [Usage](#usage)
 
-This API allows users to manage their todo list. Users need to authenticate using JWT before accessing the todo-related endpoints.
+## Intrduction
+
+API ini memungkinkan pengguna untuk mengelola daftar tugas mereka. Pengguna perlu mengautentikasi menggunakan JWT sebelum mengakses titik akhir terkait tugas.
 
 ## Authentication
 
-To access protected endpoints, you need to include a valid JWT token in the Authorization header with the "Bearer" prefix.
+Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT yang valid di header Otorisasi dengan awalan "Pembawa".To access protected endpoints, you need to include a valid JWT token in the Authorization header with the "Bearer" prefix pada beberapa endpoint yaitu todo dan user.
 
 ## Endpoints
 
-### Get All Todos
+### Get All Todo
 
--   **Endpoint:** `/todos`
--   **Method:** `GET`
--   **Description:** Retrieve all todos for the authenticated user.
--   **Authentication:** Required
+- **Endpoint:** `/todo`
+- **Method:** `GET`
+- **Description:** Retrieve all todos for the authenticated user.
+- **Authentication:** Required
 
 ### Get Todo by ID
 
--   **Endpoint:** `/todos/:id`
--   **Method:** `GET`
--   **Description:** Retrieve a specific todo by its ID.
--   **Authentication:** Required
+- **Endpoint:** `/todo/:id`
+- **Method:** `GET`
+- **Description:** Retrieve a specific todo by its ID.
+- **Authentication:** Required
 
 ### Create Todo
 
--   **Endpoint:** `/todos`
--   **Method:** `POST`
--   **Description:** Create a new todo.
--   **Authentication:** Required
+- **Endpoint:** `/todo`
+- **Method:** `POST`
+- **Description:** Create a new todo.
+- **Authentication:** Required
 
 ### Update Todo
 
--   **Endpoint:** `/todos/:id`
--   **Method:** `PUT`
--   **Description:** Update a specific todo by its ID.
--   **Authentication:** Required
+- **Endpoint:** `/todo/:id`
+- **Method:** `PUT`
+- **Description:** Update a specific todo by its ID.
+- **Authentication:** Required
 
 ### Delete Todo
 
--   **Endpoint:** `/todos/:id`
--   **Method:** `DELETE`
--   **Description:** Delete a specific todo by its ID.
--   **Authentication:** Required
+- **Endpoint:** `/todo/:id`
+- **Method:** `DELETE`
+- **Description:** Delete a specific todo by its ID.
+- **Authentication:** Required
 
 ### User Logout
 
--   **Endpoint:** `/logout`
--   **Method:** `GET`
--   **Description:** Logout the authenticated user and invalidate the JWT token.
--   **Authentication:** Required
+- **Endpoint:** `/logout`
+- **Method:** `GET`
+- **Description:** Logout the authenticated user and invalidate the JWT token.
+- **Authentication:** Required
 
 ## Installation
 
-1. Clone the repository.
-2. Install dependencies: `npm install`
-3. Set up environment variables, including `DATABASE_URL`, `JWT_SECRET`, etc.
-4. Run the application: `npm start`
+* Clone repositori.
+* Instal dependensi: `npm install` dan sequelize-cli secara global : `npm install -g sequelize-cli`
+* Membuat database denagn perintah : `sequelize-cli db:create
+* Migrasi table denagn perintah : `sequelize-cli db:migrate`
+* Jalankan aplikasi: `npm start`
 
 ## Usage
 
-1. Obtain a JWT token by authenticating using the `/login` endpoint.
-2. Include the obtained token in the Authorization header for protected endpoints.
-3. Use the provided endpoints to manage your todo list.
-
-## Contributing
-
-Feel free to contribute by submitting issues or pull requests.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+* Dapatkan token JWT dengan mengautentikasi menggunakan endpoint `/login`.
+* Sertakan token yang diperoleh di header Otorisasi untuk endpoint yang dilindungi.
+* Gunakan endpoint yang disediakan untuk mengelola daftar tugas Anda pada `/todo` dan `/user`.
