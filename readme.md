@@ -83,7 +83,7 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 - **Deskripsi:** Menghapus todo berdasarkan id.
 - **Authentication:** Wajib ada token
 
-* [ ] ### Delete All Todo
+### Delete All Todo
 
 - **Endpoint:** `/todos`
 - **Method:** `DELETE`
