@@ -4,8 +4,7 @@ Api ini menggunakan teknologi express js dan sequelize sebagai ORM serta authent
 
 ## Content
 
-
-- [Intrdduction](#introduction)
+- [Introduction](#introduction)
 - [Authentication](#authentication)
 - [Endpoints](#endpoints)
 - [Installation](#installation)
@@ -21,47 +20,71 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 
 ## Endpoints
 
+### Register
+
+- **Endpoint:** `/register`
+- **Method:** `POST`
+- **Deskripisi:** Register user denga memasukan data name, email, password dan konfirmasi_password.
+- **Authentication:** Tidak ada
+
+### Login
+
+- **Endpoint:** `/logim`
+- **Method:** `POST`
+- **Deskripisi:** Login user denga memasukan data name, dan password.
+- **Authentication:** Tidak ada
+
+### Logout
+
+- **Endpoint:** `/logout`
+- **Method:** `GET`
+- **Deskripisi:** Logout user yang diautentikasi dan membatalkan token JWT
+- **Authentication:** Wajib ada token
+
+### Get User by Token
+
+- **Endpoint:** `/user`
+- **Method:** `GET`
+- **Deskripisi:** Mengambil data user berdasarkan token JWT
+- **Authentication:** Wajib ada token
+
 ### Get All Todo
 
 - **Endpoint:** `/todo`
 - **Method:** `GET`
-- **Description:** Retrieve all todos for the authenticated user.
-- **Authentication:** Required
+- **Deskripsi:**:Mengambil data todo berdasarkan user dari token JWT
+- **Authentication:** Wajib ada token
 
 ### Get Todo by ID
 
 - **Endpoint:** `/todo/:id`
 - **Method:** `GET`
-- **Description:** Retrieve a specific todo by its ID.
-- **Authentication:** Required
+- **Deskripsi:** Mengambil data todo user berdasarkan id pada tofo.
+- **Authentication:** Wajib ada token
 
 ### Create Todo
 
 - **Endpoint:** `/todo`
 - **Method:** `POST`
-- **Description:** Create a new todo.
-- **Authentication:** Required
+
+* [ ] - 
+
+- **Authentication:** Wajib ada token
 
 ### Update Todo
 
 - **Endpoint:** `/todo/:id`
 - **Method:** `PUT`
-- **Description:** Update a specific todo by its ID.
-- **Authentication:** Required
+- **Deskripsi:** Mengubah todo berdarkan id dengan  memasukan data title dan is_completed..
+- **Authentication:** Wajib ada token
 
 ### Delete Todo
 
 - **Endpoint:** `/todo/:id`
 - **Method:** `DELETE`
-- **Description:** Delete a specific todo by its ID.
-- **Authentication:** Required
+- **Deskripsi:** Menghapus todo berdasarkan id.
+- **Authentication:** Wajib ada token
 
-### User Logout
-
-- **Endpoint:** `/logout`
-- **Method:** `GET`
-- **Description:** Logout the authenticated user and invalidate the JWT token.
-- **Authentication:** Required
 
 ## Installation
 
@@ -76,3 +99,4 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 * Dapatkan token JWT dengan mengautentikasi menggunakan endpoint `/login`.
 * Sertakan token yang diperoleh di header Otorisasi untuk endpoint yang dilindungi.
 * Gunakan endpoint yang disediakan untuk mengelola daftar tugas Anda pada `/todo` dan `/user`.
+
