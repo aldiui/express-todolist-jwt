@@ -85,7 +85,7 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 
 ## Delete All Todo
 
-- **Endpoint:** `/todo
+- **Endpoint:** `/todo`
 - **Method:** `DELETE`
 - **Deskripsi:** Menghapus semua todo.
 - **Authentication:** Wajib ada token
