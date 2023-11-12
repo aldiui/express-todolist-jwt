@@ -94,7 +94,7 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 
 * Clone repositori.
 * Instal dependensi: `npm install` dan sequelize-cli secara global : `npm install -g sequelize-cli`
-* Membuat database denagn perintah : `sequelize-cli db:create
+* Membuat database denagn perintah : `sequelize-cli db:create`
 * Migrasi table denagn perintah : `sequelize-cli db:migrate`
 * Jalankan aplikasi: `npm start`
 
@@ -103,3 +103,4 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 * Dapatkan token JWT dengan mengautentikasi menggunakan endpoint `/login`.
 * Sertakan token yang diperoleh di header Otorisasi untuk endpoint yang dilindungi.
 * Gunakan endpoint yang disediakan untuk mengelola daftar tugas Anda pada `/todo` dan `/user`.
+
