@@ -23,7 +23,7 @@ const verifyToken = (req, res, next) => {
     const token = tokenArray[1];
 
     try {
-        const payload = jwt.verify(token, process.env.JWT_SECRET);
+        const payload = jwt.verify(token, key);
         req.payload = payload;
         next();
     } catch (error) {
