@@ -59,16 +59,14 @@ Untuk mengakses titik akhir yang dilindungi, Anda perlu menyertakan token JWT ya
 
 - **Endpoint:** `/todo/:id`
 - **Method:** `GET`
-- **Deskripsi:** Mengambil data todo user berdasarkan id pada tofo.
+- **Deskripsi:** Mengambil data todo user berdasarkan id pada todo.
 - **Authentication:** Wajib ada token
 
 ### Create Todo
 
 - **Endpoint:** `/todo`
 - **Method:** `POST`
-
-* [ ] - 
-
+- **Deskripsi:** Menambahkan todo  dengan  memasukan data title dan is_completed.
 - **Authentication:** Wajib ada token
 
 ### Update Todo
