@@ -22,6 +22,12 @@ const getTodoById = async (req, res) => {
     try {
         const { id } = req.payload;
         const dataTodo = await Todo.findOne({ where: { id: req.params.id, user_id: id } });
+        if (!dataTodo) {
+            return res.status(400).json({
+                status: 400,
+                message: "Data tidak ditemukan",
+            });
+        }
 
         res.status(200).json({
             status: 200,
@@ -41,7 +47,7 @@ const createTodo = async (req, res) => {
         const { id } = req.payload;
         const { title, is_completed } = req.body;
 
-        const dataTodo = await Todo.create({ title, user_id: id, is_completed: is_completed ?? 0 });
+        const dataTodo = await Todo.create({ title, user_id: id, is_completed });
         res.status(201).json({
             status: 201,
             message: "Todo anda berhasil dibuat",
@@ -59,6 +65,14 @@ const updateTodo = async (req, res) => {
     try {
         const { id } = req.payload;
         const { title, is_completed } = req.body;
+
+        const dataTodo = await Todo.findOne({ where: { id: req.params.id, user_id: id } });
+        if (!dataTodo) {
+            return res.status(400).json({
+                status: 400,
+                message: "Data tidak ditemukan",
+            });
+        }
 
         await Todo.update(
             { title, user_id: id, is_completed },
@@ -83,7 +97,16 @@ const updateTodo = async (req, res) => {
 const deleteTodo = async (req, res) => {
     try {
         const { id } = req.payload;
-        await Todo.destroy({ where: { id: req.params.id, user_id: id } });
+
+        const dataTodo = await Todo.findOne({ where: { id: req.params.id, user_id: id } });
+        if (!dataTodo) {
+            return res.status(400).json({
+                status: 400,
+                message: "Data tidak ditemukan",
+            });
+        }
+
+        await Todo.destroy({ where: { id: req.params.id } });
         res.status(200).json({
             status: 200,
             message: "Todo anda berhasil dihapus",
